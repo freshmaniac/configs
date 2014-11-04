@@ -106,4 +106,8 @@ function cs {
 	cd $1 && ls
 }
 
-alias ls="ls -F --color=auto"
+if [ `uname -s` = "Darwin" ]; then
+	alias ls="ls -FG"
+else
+	alias ls="ls -F --color=auto"
+fi
